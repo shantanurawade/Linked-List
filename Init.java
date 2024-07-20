@@ -4,8 +4,11 @@ public class Init {
     public void init() {
         LinkedList list = new LinkedList();
         System.out.println("Welcome to implementation of LinkedList.");
+        // Flag is used to exit from loop
         int flag = 0;
         while (flag == 0) {
+            
+            //Giving choices to choose
             System.out.println("1.Add to end of list.");
             System.out.println("2.Add to start of list.");
             System.out.println("3.Add at Index of list.");
