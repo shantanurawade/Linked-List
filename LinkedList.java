@@ -1,6 +1,9 @@
 public class LinkedList {
     Node head;
+    // Initializing index as an local variable which will be passed to the method as an parameter
     int index =1;
+
+    // This method will add the new Node at the end of Linked List
     public void addToTail(int data){
         Node node = new Node(data);
         if(head == null) head = node;
@@ -14,6 +17,7 @@ public class LinkedList {
         }
         node.index = index;
     }
+    // This method will add the new Node at the start of Linked List
     public void addToHead(int data) {
         Node node = new Node(data);
 
@@ -24,8 +28,11 @@ public class LinkedList {
 
         head.next = temp;
         temp = head;
+        // Calling function to Increment indices 
         updateIndexIncrement(temp);
     }
+    
+    // Method responsible to increment index of each next node by 1
     private void updateIndexIncrement(Node node) {
         while (node.next != null) {
             index++;
@@ -33,6 +40,7 @@ public class LinkedList {
             node = node.next;
         }
     }
+    // This method will add the new Node at given index in Linked List
     public void addAtIndex(int index , int data){
         Node node = new Node(data);
 
@@ -58,6 +66,7 @@ public class LinkedList {
             }
         }else System.out.println("Provided index is unable to add.");
     }
+    // This method will Print the whole Linked List
     public void show(){
         if (head == null) System.out.println("[Empty list]");
         else {
@@ -69,6 +78,7 @@ public class LinkedList {
             System.out.print("null\n");
         }
     }
+    // Method responsible to decreas index of each next node by 1
     public void updateIndexDecrement(Node node){
         while (node.next != null) {
             index--;
@@ -76,6 +86,7 @@ public class LinkedList {
             node = node.next;
         }
     }
+    // This method will delete the Node by index in Linked List
     public void deleteByIndex(int index) {
         Node currentHead = head;
         if (head.index == index){
@@ -96,6 +107,7 @@ public class LinkedList {
             }
         }
     }
+     // This method will delete the Node by key in Linked List
     public void deleteByKey(int key) {
         Node currentHead = head;
         if (head.data == key){
